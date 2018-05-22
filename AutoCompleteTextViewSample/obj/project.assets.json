@@ -450,11 +450,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projetos\\Xamarin\\Android\\AutoCompleteTextViewSample\\AutoCompleteTextViewSample\\AutoCompleteTextViewSample.csproj",
+      "projectUniqueName": "C:\\Projetos\\GitHub\\Xamarin-Android-AutoCompleteTextView-Sample\\AutoCompleteTextViewSample\\AutoCompleteTextViewSample.csproj",
       "projectName": "AutoCompleteTextViewSample",
-      "projectPath": "C:\\Projetos\\Xamarin\\Android\\AutoCompleteTextViewSample\\AutoCompleteTextViewSample\\AutoCompleteTextViewSample.csproj",
+      "projectPath": "C:\\Projetos\\GitHub\\Xamarin-Android-AutoCompleteTextView-Sample\\AutoCompleteTextViewSample\\AutoCompleteTextViewSample.csproj",
       "packagesPath": "C:\\Users\\Leonardo\\.nuget\\packages\\",
-      "outputPath": "C:\\Projetos\\Xamarin\\Android\\AutoCompleteTextViewSample\\AutoCompleteTextViewSample\\obj\\",
+      "outputPath": "C:\\Projetos\\GitHub\\Xamarin-Android-AutoCompleteTextView-Sample\\AutoCompleteTextViewSample\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [

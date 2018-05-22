@@ -27,7 +27,7 @@ namespace AutoCompleteTextViewSample.Adapter
 
         public override Java.Lang.Object GetItem(int position)
         {
-            return position;
+            return _items[position].id;
         }
 
         public override long GetItemId(int position)

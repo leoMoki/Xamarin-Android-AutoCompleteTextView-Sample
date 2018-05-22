@@ -14,6 +14,9 @@ namespace AutoCompleteTextViewSample
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
+        AutoCompleteTextView autoComplete;
+        List<Unidade> dataSource;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -21,9 +24,9 @@ namespace AutoCompleteTextViewSample
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
 
-            List<Unidade> dataSource = GetAllUnidades(true, "teste1");
+            dataSource = GetAllUnidades(true, "teste1");
 
-            AutoCompleteTextView autoComplete = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
+            autoComplete = FindViewById<AutoCompleteTextView>(Resource.Id.autoCompleteTextView1);
                                     
             try
             {
@@ -34,6 +37,8 @@ namespace AutoCompleteTextViewSample
                     var adapter = new AutoCompleteTextViewUnidadesAdapter(this, dataSource);
                     
                     autoComplete.Adapter = adapter;
+
+                    autoComplete.ItemClick += AutoComplete_ItemClick;
                 }
                 
             }
@@ -41,6 +46,18 @@ namespace AutoCompleteTextViewSample
             {
                 string message = ex.Message;
             }
+        }
+
+        private void AutoComplete_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            AutoCompleteTextView autoText = (AutoCompleteTextView)sender;
+            var idUnidade = Convert.ToInt32(autoText.Text);
+
+
+            Unidade unidade = dataSource.FirstOrDefault(u => u.id == idUnidade);
+
+            autoComplete = autoText;
+            autoComplete.Text = unidade.Nome;
         }
 
         private List<Unidade> GetAllUnidades(bool isOnline, string prefixo)
